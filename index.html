@@ -828,7 +828,7 @@ let userEmail = '', userDomainId = '', userDepartment = '', userSubGroups = [];
 let popupMessages = [], unreadPopups = [], readPopups = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-  const emailOptions = ['user1@example.com', 'user4@example.com','user3@example.com'];
+  const emailOptions = ['user1@example.com', 'user4@example.com','user3@example.com','Jeevan.KS@carelon.com'];
   const doughts = [], resolvedDoughts = [];
 
     const storedDoubts = null;
@@ -997,7 +997,7 @@ if (depts.some(dep => userSubGroups.includes(dep)))
       html += `<tr data-field="${d.field || ''}">
         <td>${d.field || ''}</td><td>${d.domainId}</td><td>${d.doubtNumber}</td><td>${d.attachmentNumber}</td><td>${d.description}</td><td>${d.resolvedComment}</td>
         <td><button onclick="viewResolved(${index})">View</button>
-${['user4@example.com','user3@example.com'].includes(userEmail) ? `<button onclick="showUpdateResolved(${index})">Update</button>` : ''}
+${['user4@example.com','user3@example.com','Jeevan.KS@carelon.com'].includes(userEmail) ? `<button onclick="showUpdateResolved(${index})">Update</button>` : ''}
 </td></tr>`;
     }
   }
@@ -1569,7 +1569,7 @@ if (depts.some(dep => userSubGroups.includes(dep)))
       html += `<tr data-field="${d.field || 'General'}">
         <td>${d.field || 'General'}</td><td>${d.domainId}</td><td>${d.doubtNumber}</td><td>${d.attachmentNumber}</td><td>${d.description}</td><td>${d.resolvedComment}</td>
         <td><button onclick="viewResolved(${index})">View</button>
-${['user4@example.com','user3@example.com'].includes(userEmail) ? `<button onclick="showUpdateResolved(${index})">Update</button>` : ''}
+${['user4@example.com','user3@example.com','Jeevan.KS@carelon.com'].includes(userEmail) ? `<button onclick="showUpdateResolved(${index})">Update</button>` : ''}
 </td></tr>`;
     }
   }
@@ -1687,7 +1687,7 @@ window.showSection = function (section) {
       <label>Inquiry Number:</label><input id='doubtNumber' required>
       <label>Attachment Number:</label><input id='attachmentNumber'>
       <label>Description:</label><textarea id='doubtDesc'></textarea>
-      <label>Select Email:</label><select id='emailSelect'>${['user1@example.com', 'user4@example.com','user3@example.com'].map(e => `<option>${e}</option>`).join('')}</select>
+      <label>Select Email:</label><select id='emailSelect'>${['user1@example.com', 'user4@example.com','user3@example.com','Jeevan.KS@carelon.com'].map(e => `<option>${e}</option>`).join('')}</select>
       <button onclick='submitDoubt()'>Submit</button>
     `;
   } else if (section === 'resolved') {
@@ -1710,7 +1710,7 @@ window.showSection = function (section) {
 
     contentArea.innerHTML = html;
   } else if (section === 'query') {
-    const emailOptions = ['user1@example.com', 'user4@example.com','user3@example.com'];
+    const emailOptions = ['user1@example.com', 'user4@example.com','user3@example.com','Jeevan.KS@carelon.com'];
     if (emailOptions.includes(userEmail.toLowerCase())) {
       const assigned = doughts.filter(d => d.assignedEmail === userEmail && d.status === 'pending');
       contentArea.innerHTML = '<h3>Query to Answer</h3>' + assigned.map((d, index) => `
@@ -1738,7 +1738,7 @@ window.showSection = function (section) {
 }
 
 function updateQueryToAnswerBadge() {
-  const emailOptions = ['user1@example.com', 'user4@example.com', 'user3@example.com'];
+  const emailOptions = ['user1@example.com', 'user4@example.com', 'user3@example.com','Jeevan.KS@carelon.com'];
   const badge = document.getElementById("queryCount");
   if (!badge || !emailOptions.includes(userEmail)) return;
 
